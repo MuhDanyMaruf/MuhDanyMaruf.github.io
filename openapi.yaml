@@ -81,10 +81,18 @@ paths:
       responses:
         '200':
           description: Successful creation of pakaian
+  /pakaian/{id}:
     put:
       summary: Update Pakaian
       security:
         - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          example: 4
       requestBody:
         required: true
         content:
@@ -110,7 +118,6 @@ paths:
       responses:
         '200':
           description: Successful update of pakaian
-  /pakaian/{id}:
     delete:
       summary: Delete Pakaian
       security:
@@ -154,10 +161,18 @@ paths:
       responses:
         '200':
           description: Successful creation of pembeli
+  /pembeli/{id}:
     put:
       summary: Update Pembeli
       security:
         - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          example: 3
       requestBody:
         required: true
         content:
@@ -177,7 +192,6 @@ paths:
       responses:
         '200':
           description: Successful update of pembeli
-  /pembeli/{id}:
     delete:
       summary: Delete Pembeli
       security:
