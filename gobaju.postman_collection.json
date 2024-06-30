@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "71e05c9a-e771-4509-a42c-98c492a82f75",
+		"name": "gobaju",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33966215"
+	},
+	"item": [
+		{
+			"name": "Registrasi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"wawan\",\r\n    \"password\" : \"12345\",\r\n    \"email\" : \"wawan12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://130.162.195.228/mhs714220025/regis",
+					"protocol": "https",
+					"host": [
+						"130",
+						"162",
+						"195",
+						"228"
+					],
+					"path": [
+						"mhs714220025",
+						"regis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Banban\",\r\n    \"password\" : \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://130.162.195.228/mhs714220025/login",
+					"protocol": "https",
+					"host": [
+						"130",
+						"162",
+						"195",
+						"228"
+					],
+					"path": [
+						"mhs714220025",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pakaian",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post Pakaian",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhbmJhbiIsImV4cCI6MTcxOTc1Nzg1N30.amG8Pv2gfISmHkKZPJxQPOuBrg1WWVmuDmZvdawPNq8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"namapakaian\": \"Baju Koko\",\r\n    \"deskripsi\": \"Baju untuk beribadah\",\r\n    \"ukuran\": \"L\",\r\n    \"stok\": 30,\r\n    \"hargapakaian\": 800000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://130.162.195.228/mhs714220025/pakaian",
+					"protocol": "https",
+					"host": [
+						"130",
+						"162",
+						"195",
+						"228"
+					],
+					"path": [
+						"mhs714220025",
+						"pakaian"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pakaian",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhbmJhbiIsImV4cCI6MTcxOTc1Nzg1N30.amG8Pv2gfISmHkKZPJxQPOuBrg1WWVmuDmZvdawPNq8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"namapakaian\": \"Baju Koko\",\r\n    \"deskripsi\": \"Baju untuk beribadah\",\r\n    \"ukuran\": \"M\",\r\n    \"stok\": 10,\r\n    \"hargapakaian\": 300000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://130.162.195.228/mhs714220025/pakaian/4",
+					"protocol": "https",
+					"host": [
+						"130",
+						"162",
+						"195",
+						"228"
+					],
+					"path": [
+						"mhs714220025",
+						"pakaian",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pakaian",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhbmJhbiIsImV4cCI6MTcxOTc1Nzg1N30.amG8Pv2gfISmHkKZPJxQPOuBrg1WWVmuDmZvdawPNq8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://130.162.195.228/mhs714220025/pakaian/4",
+					"protocol": "https",
+					"host": [
+						"130",
+						"162",
+						"195",
+						"228"
+					],
+					"path": [
+						"mhs714220025",
+						"pakaian",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pembeli",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post Pembeli",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhbmJhbiIsImV4cCI6MTcxOTc1Nzg1N30.amG8Pv2gfISmHkKZPJxQPOuBrg1WWVmuDmZvdawPNq8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nama\": \"Joe Biden\",\r\n  \"email\": \"Joe.doe@example.com\",\r\n  \"jumlahpembelian\": 100\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://130.162.195.228/mhs714220025/pembeli",
+					"protocol": "https",
+					"host": [
+						"130",
+						"162",
+						"195",
+						"228"
+					],
+					"path": [
+						"mhs714220025",
+						"pembeli"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Pembeli",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhbmJhbiIsImV4cCI6MTcxOTc1Nzg1N30.amG8Pv2gfISmHkKZPJxQPOuBrg1WWVmuDmZvdawPNq8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nama\": \"Joe Budi\",\r\n  \"email\": \"Joe.Budi@example.com\",\r\n  \"jumlahpembelian\": 150\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://130.162.195.228/mhs714220025/pembeli/3",
+					"protocol": "https",
+					"host": [
+						"130",
+						"162",
+						"195",
+						"228"
+					],
+					"path": [
+						"mhs714220025",
+						"pembeli",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pembeli",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhbmJhbiIsImV4cCI6MTcxOTc1Nzg1N30.amG8Pv2gfISmHkKZPJxQPOuBrg1WWVmuDmZvdawPNq8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://130.162.195.228/mhs714220025/pembeli/3",
+					"protocol": "https",
+					"host": [
+						"130",
+						"162",
+						"195",
+						"228"
+					],
+					"path": [
+						"mhs714220025",
+						"pembeli",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,200 @@
+openapi: 3.0.0
+info:
+  title: gobaju
+  version: 1.0.0
+servers:
+  - url: https://130.162.195.228/mhs714220025
+paths:
+  /regis:
+    post:
+      summary: Registrasi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: wawan
+                password:
+                  type: string
+                  example: 12345
+                email:
+                  type: string
+                  example: wawan12345
+      responses:
+        '200':
+          description: Successful registration
+  /login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: Banban
+                password:
+                  type: string
+                  example: 12345
+      responses:
+        '200':
+          description: Successful login
+  /pakaian:
+    get:
+      summary: Get Pakaian
+      responses:
+        '200':
+          description: Successful retrieval of pakaian
+    post:
+      summary: Post Pakaian
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                namapakaian:
+                  type: string
+                  example: Baju Koko
+                deskripsi:
+                  type: string
+                  example: Baju untuk beribadah
+                ukuran:
+                  type: string
+                  example: L
+                stok:
+                  type: integer
+                  example: 30
+                hargapakaian:
+                  type: integer
+                  example: 800000
+      responses:
+        '200':
+          description: Successful creation of pakaian
+    put:
+      summary: Update Pakaian
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                namapakaian:
+                  type: string
+                  example: Baju Koko
+                deskripsi:
+                  type: string
+                  example: Baju untuk beribadah
+                ukuran:
+                  type: string
+                  example: M
+                stok:
+                  type: integer
+                  example: 10
+                hargapakaian:
+                  type: integer
+                  example: 300000
+      responses:
+        '200':
+          description: Successful update of pakaian
+  /pakaian/{id}:
+    delete:
+      summary: Delete Pakaian
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          example: 4
+      responses:
+        '200':
+          description: Successful deletion of pakaian
+  /pembeli:
+    get:
+      summary: Get Pembeli
+      responses:
+        '200':
+          description: Successful retrieval of pembeli
+    post:
+      summary: Post Pembeli
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nama:
+                  type: string
+                  example: Joe Biden
+                email:
+                  type: string
+                  example: Joe.doe@example.com
+                jumlahpembelian:
+                  type: integer
+                  example: 100
+      responses:
+        '200':
+          description: Successful creation of pembeli
+    put:
+      summary: Update Pembeli
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nama:
+                  type: string
+                  example: Joe Budi
+                email:
+                  type: string
+                  example: Joe.Budi@example.com
+                jumlahpembelian:
+                  type: integer
+                  example: 150
+      responses:
+        '200':
+          description: Successful update of pembeli
+  /pembeli/{id}:
+    delete:
+      summary: Delete Pembeli
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          example: 3
+      responses:
+        '200':
+          description: Successful deletion of pembeli
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
